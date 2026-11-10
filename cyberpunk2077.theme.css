@@ -1,0 +1,102 @@
+/**
+ * @name Cyberpunk 2077 (Purple Shift Edition)
+ * @author Patryk Bielanin | bielak (Modified for Purple Accents)
+ * @description Cyberpunk 2077 UI styled theme for better discord with purple accent shifts.
+ * @version 2.0.1
+ * @source https://github.com
+ * @website https://github.com
+ * @donate https://paypal.com
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Sixtyfour&display=swap');
+@import url('./base.css');
+
+:root {
+    /* Background and Layout Configuration */
+    --background-primary: linear-gradient(180deg, rgba(23,0,5,.75) 10%, rgba(0,0,0,1) 65%); 
+    --background-secondary: linear-gradient(180deg, rgba(23,0,5,.75) 10%, rgba(0,0,0,1) 65%); 
+    --cp-background-secondary: var(--background-secondary);
+    --font-primary: 'Rajdhani', sans-serif; 
+    --primary-text-color: lightgray; 
+
+    /* Color Grid Coordinates (Raw Numbers Only) */
+    --primary: 23, 13, 22;  
+    --red: 255, 0, 60; 
+    --blue: 114, 234, 248; 
+    --yellow: 243, 230, 0; 
+    --green: 71, 213, 139; 
+    --dark-green: 56, 171, 111;
+    --purple: 186, 83, 202; /* Your original BA53CA base purple */
+
+    /* Avatar Component Framing */
+    --avatar-circle: 0; 
+    --avatar-rounded: 5px; 
+    --avatar-border: 1px solid var(--neon-red-color); 
+
+    /* Derived Functional Palette */
+    --primary-color: rgba(var(--primary), 0.9);
+    --dark-primary-color: rgba(var(--primary), 1);
+    --light-primary-color: rgba(var(--primary), 0.6);
+
+    --neon-red-color: rgba(var(--red), 1);
+    --neon-blue-color: rgba(var(--blue), 1);
+    --neon-yellow-color: rgba(var(--yellow), 1);
+    --neon-green-color: rgba(var(--green), 1);
+    --neon-purple-color: rgba(var(--purple), 1);
+
+    --light-neon-red-color: rgba(var(--red), 0.5);
+    --light-neon-blue-color: rgba(var(--blue), 0.65);
+    --light-neon-yellow-color: rgba(var(--yellow), 0.5);
+    --light-neon-green-color: rgba(var(--green), 0.5);
+    --light-neon-purple-color: rgba(var(--purple), 0.5);
+
+    --dark-neon-red-color: rgba(var(--red), 0.25);
+    --dark-neon-green-color: rgb(var(--dark-green));
+}
+
+/* ====================================================
+    DISCORD COMPONENT OVERRIDES (For Purple Syncing)
+   ==================================================== */
+body,
+.theme-dark:not(html, .custom-user-profile-theme),
+.theme-light:not(html, .custom-user-profile-theme) {
+    /* Main Theme Interactions */
+    --brand-experiment: var(--neon-red-color);
+    --brand-experiment-hover: rgba(var(--purple), 0.85);
+    --brand-experiment-active: rgba(var(--purple), 0.7);
+    --control-brand-foreground: var(--neon-purple-color);
+    --interactive-active: var(--neon-purple-color);
+    
+    /* Document Links & Global Accents */
+    --text-brand: var(--neon-purple-color); 
+    --text-link: var(--neon-purple-color);  
+    --text-link-low-saturation: var(--light-neon-purple-color);
+
+    /* Notification Rings & Chat Pings */
+    --mention-foreground: var(--neon-purple-color); 
+    --mention-background: rgba(var(--purple), 0.15); 
+    --background-mentioned: rgba(var(--purple), 0.12); 
+    --background-mentioned-hover: rgba(var(--purple), 0.14);
+    --message-mentioned-background-default: rgba(var(--purple), 0.1); 
+    --message-mentioned-background-hover: rgba(var(--purple), 0.14);
+    --info-warning-foreground: var(--neon-purple-color); 
+
+    /* Voice Systems & Custom UI Bounds */
+    --status-positive: var(--neon-purple-color); 
+    --voice-video-tile-speaking-border: var(--neon-purple-color);
+    --custom-theme-border-color: var(--neon-purple-color); 
+}
+
+/* Wildcard Overrides to capture imported base structural details */
+[class*="children_"] [class*="topic_"] {
+    color: var(--light-neon-purple-color) !important;
+}
+
+[class*="react-datepicker__current-month"] {
+    color: var(--neon-purple-color) !important;
+}
+
+[class*="calendarPicker_"] .react-datepicker__month .react-datepicker__day--outside-month {
+    background: rgba(var(--purple), 0.15) !important;
+    color: rgba(var(--purple), 0.4) !important;
+}
